@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar">
 <head>
-<title>BioQuest</title>
+  <meta charset="UTF-8">
+  <title>BioQuest - لعبة البايولوجي</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>BioQuest Game</h1>
-<!-- المحتوى الكامل سيتم إدراجه لاحقًا -->
+  <h1>BioQuest – لعبة تعليمية تفاعلية</h1>
+  <h3>بطلب من كرار حيدر – K</h3>
+
+  <div id="game">
+    <p>مرحبًا بك في لعبة BioQuest! اضغط للبدء.</p>
+    <button onclick="startGame()">ابدأ اللعبة</button>
+  </div>
+
+  <div id="result" style="display: none;">
+    <h2>النتيجة:</h2>
+    <p id="score"></p>
+    <button onclick="restartGame()">إعادة اللعب</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
