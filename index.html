@@ -2,23 +2,78 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>BioQuest - لعبة البايولوجي</title>
+  <title>BioQuest – لعبة تعليمية بايولوجية</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>BioQuest – لعبة تعليمية تفاعلية</h1>
-  <h3>بطلب من كرار حيدر – K</h3>
+  <header>
+    <h1>BioQuest – لعبة تعليمية بايولوجية</h1>
+    <h3>بطلب من كرار حيدر – K</h3>
+    <div class="top-bar">
+      <button onclick="toggleSound()">تشغيل/كتم الصوت</button>
+      <span id="high-score-label">أعلى نتيجة: 0</span>
+    </div>
+  </header>
 
-  <div id="game">
-    <p>مرحبًا بك في لعبة BioQuest! اضغط للبدء.</p>
+  <!-- شاشة البداية -->
+  <section id="start-screen" class="screen active">
+    <h2>ابدأ التحدي</h2>
+    <input type="text" id="player1" placeholder="اسم اللاعب 1">
+    <input type="text" id="player2" placeholder="اسم اللاعب 2">
     <button onclick="startGame()">ابدأ اللعبة</button>
-  </div>
+  </section>
 
-  <div id="result" style="display: none;">
-    <h2>النتيجة:</h2>
-    <p id="score"></p>
+  <!-- المرحلة 1 -->
+  <section id="stage1" class="screen">
+    <h2>المرحلة 1: صائد الطفيليات</h2>
+    <p id="turn-info"></p>
+    <img id="parasite-img" src="" alt="صورة الطفيلي" />
+    <div id="options"></div>
+    <p id="score-info"></p>
+    <p id="timer">الوقت: 60 ثانية</p>
+  </section>
+
+  <!-- المرحلة 2 -->
+  <section id="stage2" class="screen">
+    <h2>المرحلة 2: أسئلة اختيار من متعدد</h2>
+    <p id="mcq-question"></p>
+    <div id="mcq-options"></div>
+    <p id="mcq-timer">الوقت: 60 ثانية</p>
+  </section>
+
+  <!-- المرحلة 3 -->
+  <section id="stage3" class="screen">
+    <h2>المرحلة 3: ترتيب دورة الحياة</h2>
+    <p id="stage3-turn"></p>
+    <div id="dropzone"></div>
+    <div id="cards-container"></div>
+    <button onclick="submitStage3()">تأكيد الترتيب</button>
+    <p id="stage3-timer">الوقت: 60 ثانية</p>
+  </section>
+
+  <!-- المرحلة 4 -->
+  <section id="stage4" class="screen">
+    <h2>المرحلة 4: مطابقة المصطلحات بالتعريفات</h2>
+    <div id="terms-container"></div>
+    <div id="definitions-container"></div>
+    <button onclick="submitStage4()">تأكيد المطابقة</button>
+    <p id="stage4-timer">الوقت: 60 ثانية</p>
+  </section>
+
+  <!-- النتيجة النهائية -->
+  <section id="end-screen" class="screen">
+    <h2>النتيجة النهائية</h2>
+    <p id="final-result"></p>
     <button onclick="restartGame()">إعادة اللعب</button>
-  </div>
+  </section>
+
+  <!-- ملفات الصوت -->
+  <audio id="correct-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2a4ed6228f.mp3" preload="auto"></audio>
+  <audio id="wrong-sound" src="https://cdn.pixabay.com/download/audio/2022/03/28/audio_43c9c9baf3.mp3" preload="auto"></audio>
+  <audio id="bg-music-1" src="https://cdn.pixabay.com/download/audio/2023/03/19/audio_1f56b30d36.mp3" preload="auto" loop></audio>
+  <audio id="bg-music-2" src="https://cdn.pixabay.com/download/audio/2022/10/09/audio_8b0e2bfbce.mp3" preload="auto" loop></audio>
+  <audio id="bg-music-3" src="https://cdn.pixabay.com/download/audio/2022/08/19/audio_60c6d1852f.mp3" preload="auto" loop></audio>
+  <audio id="bg-music-4" src="https://cdn.pixabay.com/download/audio/2023/03/13/audio_4c3ed4d88e.mp3" preload="auto" loop></audio>
 
   <script src="script.js"></script>
 </body>
