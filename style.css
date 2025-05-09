@@ -1,1 +1,18 @@
-body { background: #222; color: white; font-family: sans-serif; }
+body {
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  color: white;
+  font-family: 'Cairo', sans-serif;
+  text-align: center;
+  padding: 30px;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background: #00c9ff;
+  color: black;
+  cursor: pointer;
+  margin-top: 20px;
+}
